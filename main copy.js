@@ -48,7 +48,7 @@ console.log(`El usuario ${nombreUsuario} se ha logueado correctamente`);
 mostrarProductos()
 
 function mostrarProductos(){
-   const productos = Number(prompt (`Elija el producto que desea ingresando el número correspondiente:
+  const productos = prompt (`Elija el producto que desea ingresando el número correspondiente:
   Lista de juegos:
  ${carmagedon.id}     ${carmagedon.nombre}
  ${mortalKombat3.id}     ${mortalKombat3.nombre}
@@ -56,16 +56,107 @@ function mostrarProductos(){
  ${superMario64.id}     ${superMario64.nombre}
  ${zelda.id}     ${zelda.nombre}
  ${finalFantasy7.id}     ${finalFantasy7.nombre}
- Si queres finalizar ingresa 0
-  `))
-  const productoElegido = listaDeJuegos.find(juego => juego.id == productos)
-  if (productos != 0){
-  agregarJuegoCarrito(productoElegido)
-  mostrarProductos()}
+  `)
 }
 
-alert(`Que buena elección ${nombreUsuario}!`)
+
 /*
+
+
+//ELEGIR JUEGO
+let juegoelegido = prompt(`
+Lista de juegos:
+${carmagedon.nombre}
+${mortalKombat3.nombre}
+${crash.nombre}
+${superMario64.nombre}
+${zelda.nombre}
+${finalFantasy7.nombre}
+
+Elija el que desea llevar:
+
+Si queres finalizar ingresa la palabra "Esc"`).toLowerCase();
+while (juegoelegido != "esc") {
+  switch (juegoelegido) {
+    case "carmagedon":
+      alert(`Elegiste el ${carmagedon.nombre}!
+      Genero: ${carmagedon.genero}
+      Precio: ${carmagedon.precio}
+      Año: ${carmagedon.anio}
+      Plataforma: ${carmagedon.plataforma}`)
+  agregarJuegoCarrito(carmagedon)
+      break;
+
+
+    case "mortal kombat 3":
+      alert(`Elegiste el ${mortalKombat3.nombre}!
+      Genero: ${mortalKombat3.genero}
+      Precio: ${mortalKombat3.precio}
+      Año: ${mortalKombat3.anio}
+      Plataforma: ${mortalKombat3.plataforma}`)
+      agregarJuegoCarrito(mortalKombat3)
+      break;
+
+    case "crash":
+      alert(`Elegiste el ${crash.nombre}!
+      Genero: ${crash.genero}
+      Precio: ${crash.precio}
+      Año: ${crash.anio}
+      Plataforma: ${crash.plataforma}`)
+      agregarJuegoCarrito(crash)
+      break;
+
+    case "super mario 64":
+      alert(`Elegiste el ${superMario64.nombre}!
+      Genero: ${superMario64.genero}
+      Precio: ${superMario64.precio}
+      Año: ${superMario64.anio}
+      Plataforma: ${superMario64.plataforma}`)
+      agregarJuegoCarrito(superMario64)
+      break;
+
+      case "zelda":
+        alert(`Elegiste el ${zelda.nombre}!
+        Genero: ${zelda.genero}
+        Precio: ${zelda.precio}
+        Año: ${zelda.anio}
+        Plataforma: ${zelda.plataforma}`)
+        agregarJuegoCarrito(zelda)
+        break;
+
+        case "final fantasy 7":
+        alert(`Elegiste el ${finalFantasy7.nombre}!
+        Genero: ${finalFantasy7.genero}
+        Precio: ${finalFantasy7.precio}
+        Año: ${finalFantasy7.anio}
+        Plataforma: ${finalFantasy7.plataforma}`)
+        agregarJuegoCarrito(finalFantasy7)
+        break;
+
+    default:
+      alert(
+        `${juegoelegido} no es una opción válida, por favor siga las intrucciones para que podamos tomar correctamente su pedido`
+      );
+      break;
+  }
+  
+  juegoelegido = prompt(`
+  Lista de juegos:
+  ${carmagedon.nombre}
+  ${mortalKombat3.nombre}
+  ${crash.nombre}
+  ${superMario64.nombre}
+  ${zelda.nombre}
+  ${finalFantasy7.nombre}
+  
+  Elija el que desea llevar:
+
+Si queres finalizar ingresa la palabra "Esc"`).toLowerCase();
+}
+alert(`Que buena elección ${nombreUsuario}!`)
+
+console.log("Contenido del carrito: ")
+console.log(carrito)
 
 //Menu Prepedido
 
@@ -90,6 +181,7 @@ Si deseas eliminar algún juego del carrito, ingresa "Eliminar"`).toLowerCase()
 Si deseas continuar con el pedido, ingresa "OK"
 Si deseas eliminar algún juego del carrito, ingresa "Eliminar"`).toLowerCase()   
 }}
+
 
 //Calcular costo de envío
 
@@ -183,7 +275,7 @@ let precioTotal = carrito.reduce(
   0
 );
 console.log(`El precio total es de: ${precioTotal}`)
-*/
+
 //Funciones
 
 function calcularCostoEnvio(distancia) {
@@ -194,8 +286,6 @@ function calcularCostoEnvio(distancia) {
 function agregarJuegoCarrito (juego){
   console.log(juego.nombre + " agregado al carrito.")
   carrito.push(juego)
-  console.log("Carrito: ")
-  console.log(carrito)
 }
 
 function eliminarJuego(){
@@ -204,4 +294,4 @@ function eliminarJuego(){
   carrito.splice(juego, 1)
   alert(`Eliminado!`)
   console.log("Contenido del carrito: ")
-  console.log(carrito)}
+  console.log(carrito)}*/
