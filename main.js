@@ -12,12 +12,12 @@ class Juego {
   }
 }
 
-const carmagedon = new Juego("Carmagedon", "Carreras", 4500, 2022, "PC");
-const mortalKombat3 = new Juego("Mortal Kombat 3", "Lucha", 3000, 1995, "Sega");
-const crash = new Juego ("Crash", "Plataformas", 2500, 2021, "Playstation")
-const superMario64 = new Juego ("Super Mario 64", "Plataformas", 6000, 1996, "Nintendo" )
-const zelda = new Juego ("The Legend of Zelda: Ocarina of Time", "RPG",10000, 1998, "Nintendo"  )
-const finalFantasy7 = new Juego("Final Fantasy 7", "RPG", 12000,1997, "Playstation" )
+const carmagedon = new Juego("carmagedon", "carreras", 4500, 2022, "pc");
+const mortalKombat3 = new Juego("mortal kombat 3", "lucha", 3000, 1995, "sega");
+const crash = new Juego ("crash", "plataformas", 2500, 2021, "playstation")
+const superMario64 = new Juego ("super mario 64", "plataformas", 6000, 1996, "nintendo" )
+const zelda = new Juego ("the legend of zelda: ocarina of time", "rpg",10000, 1998, "nintendo"  )
+const finalFantasy7 = new Juego("final fantasy 7", "rpg", 12000,1997, "playstation" )
 
 //Array
 
@@ -270,12 +270,10 @@ function agregarJuegoCarrito (juego){
 
 function eliminarJuego(){
   let nombre = prompt("Ingrese el nombre del juego")
-  let juego = carrito.find(juego => juego.nombre == nombre)
-  let indice = carrito.indexOf(juego)
-  carrito.splice(indice, 1)
+  while(nombre != ""){
+  let juego = carrito.findIndex(juego => juego.nombre == nombre)
+  carrito.splice(juego, 1)
   alert(`Eliminado!`)
   console.log("Contenido del carrito: ")
-  console.log(carrito)
+  console.log(carrito)}
 }
-
-
