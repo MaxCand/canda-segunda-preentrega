@@ -122,10 +122,15 @@ function agregarJuegoCarrito(juego) {
 function eliminarJuego() {
   let nombre = prompt("Ingrese el nombre del juego");
   let juego = carrito.findIndex((juego) => juego.nombre == nombre);
+  let existe = carrito.some((juego) => juego.nombre == nombre)
+  if(existe){
   carrito.splice(juego, 1);
   alert(`Eliminado!`);
   console.log("Contenido del carrito: ");
-  console.log(carrito);
+  console.log(carrito);} else {
+    alert("No se encuentra en el carrito, intente nuevamente")
+    eliminarJuego()
+  }
 }
 
 function entregaproducto() {
