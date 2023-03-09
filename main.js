@@ -1,3 +1,4 @@
+
 //Contraseña de acceso
 const PASS = 1234;
 
@@ -43,8 +44,9 @@ alert("¡Bienvenido a la Juegoteca!");
   console.log(`El usuario ${nombreUsuario} se ha logueado correctamente`);
 //Mostrar los productos
 mostrarProductos();
-//Datos de envio
-calculardistanciaEnvio();
+// Datos de envio
+let distancia = costoEnvio()
+console.log(distancia)
 let domicilio = prompt(
   `${nombreUsuario}, por favor, ingresa tu domicilio a continuación para que el reparto pueda pasar por tu casa a entregarte el pedido: `
 );
@@ -94,22 +96,14 @@ function menuPrePedido() {
   }
 }
 
-function calcularCostoEnvio(distancia) {
-  let costoEnvio = distancia * 150;
-  return costoEnvio;
-}
-
-function calculardistanciaEnvio() {
-  let distanciaEnvio = prompt(
-    `Ahora vamos a calcular el costo de envío dependiendo de la distancia a la que te encuentres. Por favor, indicanos a cuantos km te encontras de la sucursal: `
-  );
-  if (distanciaEnvio == "") {
-    calcularCostoEnvio();
+function costoEnvio(){
+  let distancia = Number(prompt("Ahora vamos a calcular el costo de envío dependiendo de la distancia a la que te encuentres. Por favor, indicanos a cuantos km te encontras de la sucursal"))
+  if (distancia == ""){
+    alert("Opción no válida")
+    costoEnvio()
   } else {
-    let costoEnvio = calcularCostoEnvio(distanciaEnvio);
-    alert("El costo del envío es de: " + costoEnvio + "$");
-    console.log("El costo de envío es de: " + costoEnvio);
-  }
+    console.log("Costo de envío: ")
+  return distancia * 150;}
 }
 
 function agregarJuegoCarrito(juego) {
@@ -171,7 +165,7 @@ function resumenDeCompra() {
   });
 
   let precioTotal = carrito.reduce(
-    (acumulador, juego) => acumulador + juego.precio,
+    (acumulador, juego) => acumulador + juego.precio + distancia,
     0
   );
   console.log(`El precio total es de: ${precioTotal}`);
