@@ -22,31 +22,12 @@ const finalFantasy7 = new Juego("final fantasy 7",  "rpg",  12000,  1997,  "play
 
 //Array
 
-let listaDeJuegos = [
-  carmagedon,  mortalKombat3,  crash,  superMario64,  zelda,  finalFantasy7,
-];
-
+let listaDeJuegos = [carmagedon,  mortalKombat3,  crash,  superMario64,  zelda,  finalFantasy7,];
 let carrito = [];
 
 //Bienvenida
 alert("¡Bienvenido a la Juegoteca!");
 //Logueo
-logueo()
-//Mostrar los productos
-mostrarProductos();
-//Menu Prepedido
-menuPrePedido();
-//Datos de envio
-calculardistanciaEnvio();
-let domicilio = prompt(
-  `${nombreUsuario}, por favor, ingresa tu domicilio a continuación para que el reparto pueda pasar por tu casa a entregarte el pedido: `
-);
-entregaproducto();
-resumenDeCompra();
-
-//Funciones
-
-function logueo(){
   let nombreUsuario = prompt("Por favor, ingrese su nombre de usuario");
   while (nombreUsuario == "") {
     alert("Nombre de usuario ingresado no es válido");
@@ -60,8 +41,17 @@ function logueo(){
   }
   alert("Contraseña correcta");
   console.log(`El usuario ${nombreUsuario} se ha logueado correctamente`);
-  }
+//Mostrar los productos
+mostrarProductos();
+//Datos de envio
+calculardistanciaEnvio();
+let domicilio = prompt(
+  `${nombreUsuario}, por favor, ingresa tu domicilio a continuación para que el reparto pueda pasar por tu casa a entregarte el pedido: `
+);
+entregaproducto();
+resumenDeCompra();
 
+//Funciones
 function mostrarProductos() {
   const productos = Number(
     prompt(`Elija el producto que desea ingresando el número correspondiente:
