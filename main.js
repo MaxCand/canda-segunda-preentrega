@@ -42,6 +42,7 @@ alert("¡Bienvenido a la Juegoteca!");
   }
   alert("Contraseña correcta");
   console.log(`El usuario ${nombreUsuario} se ha logueado correctamente`);
+
 //Mostrar los productos
 mostrarProductos();
 // Datos de envio
@@ -51,6 +52,7 @@ let domicilio = prompt(
   `${nombreUsuario}, por favor, ingresa tu domicilio a continuación para que el reparto pueda pasar por tu casa a entregarte el pedido: `
 );
 entregaproducto();
+
 resumenDeCompra();
 
 //Funciones
@@ -165,8 +167,8 @@ function resumenDeCompra() {
   });
 
   let precioTotal = carrito.reduce(
-    (acumulador, juego) => acumulador + juego.precio + distancia,
+    (acumulador, juego) => acumulador + juego.precio,
     0
   );
-  console.log(`El precio total es de: ${precioTotal}`);
+  console.log(`El precio total de los juegos es de: ${precioTotal} + ${distancia}$ de envío`);
 }
